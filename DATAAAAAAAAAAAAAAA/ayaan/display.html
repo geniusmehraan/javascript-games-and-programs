@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>glowing button</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    height: 100vh;
+    background-color: var(--light-color);
+}
+.btn{
+    background-color: #fff;
+    height: 2em;
+    width: 4.5em;
+    padding: 0 0.5em;
+    border-radius: 10em;
+    box-shadow: inset 0 8px 60px rgba(0,0,0, .1),
+                inset 0 8px 8px rgba(0,0,0, .1),
+                inset 0 -4px 4px rgba(0,0,0, .1);
+    position: relative;
+    display: flex;
+    align-items: center;
+	
+}
+.text .btn1{
+margin-left:70px;
+margin-top:60px;
+
+}
+.btn-indicator{
+    background-color: #fff;
+    height: 1.7em;
+    width: 1.7em;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: transform ease 0.5s;
+	box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+	right:40px;
+}
+.btn-icon-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-icon{
+    font-size: 2rem;
+    color: yellow;
+}
+body.darkmode{
+    background-color: #333;
+	color:#fff;
+}
+.darkmode .btn{
+    box-shadow: inset 0 8px 60px rgba(0,0,0, .3),
+                inset 8px 0 8px rgba(0,0,0, .3),
+                inset 0 -4px 4px rgba(0,0,0, .3);
+}
+.darkmode .btn-indicator{
+    transform: translateX(2.3em);
+    background-color: #444;
+    box-shadow: 0 8px  40px rgba(0,0,0, .3);
+}
+.darkmode .btn-icon{
+    color: #fff;
+}
+.text .BTN-2{
+color:#fff;
+margin-top:40px;
+
+
+}
+.text .BTN-2::selection{
+    background-color:#fff;
+	color:#fff;
+}
+.heading{
+text-align:center;
+font-family:"Roboto",sans-serif;
+}
+.darkmode .text .btn1{
+
+display:none;
+}
+.darkmode .text .BTN-2{
+margin-left:70px;
+color:#fff;
+margin-bottom:40px;
+}
+.darkmode-ops{
+display:flex;
+align-items:center;
+justify-content:end;
+margin-right:90px;
+margin-top:20px;
+
+}
+.disp{
+margin-right:50px;
+text-align:end;
+margin-top:40px;
+}
+</style>
+</head>
+<body>
+
+<div class="heading">
+<h1>Display settings</h1>
+</div>
+<h2 class="disp">Darkmode</h2>
+<div class="darkmode-ops">
+<div class="btn">
+<div class="text">
+<h3 class="btn1">ON</h3>
+<h3 class="BTN-2">OFF</h3>
+</div>
+    <div class="btn-indicator">
+        <div class="btn-icon-container">
+            <i class="btn-icon fa-solid fa-sun"></i>
+        </div>
+	
+    </div>
+</div>
+</div>
+
+    <script>
+const body = document.querySelector('body');
+const btn = document.querySelector('.btn-indicator');
+const icon = document.querySelector('.btn-icon');
+
+btn.addEventListener('click',()=>{
+    body.classList.toggle('darkmode');
+})
+if(body.classList.contains('darkmode')){
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+}else{
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+}
+
+    </script>
+</body>
+</html>

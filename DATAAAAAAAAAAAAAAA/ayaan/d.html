@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="d.css">
+    <title>clone</title>
+</head>
+<body>
+    <nav class="nav">
+<a href="index.html" class="nav_link nav_link">
+<i class="material-icons nav_icons">
+<pre>
+<span style="font-size: 30px">🏠</span>
+Home
+</pre>
+</i>
+</a>
+<a href="e.html" class="nav_link nav_link">
+<i class="material-icons nav_icons">
+<pre>
+<span style="font-size: 29.8px"> 😆</span>
+Jokes
+</pre>
+</i>
+</a>
+<a href="d.html" class="nav_link nav_link_active">
+<i class="material-icons nav_icons">
+<pre>
+<span style="font-size: 30px">  🔒</span>
+Saved file
+</pre>
+</i>
+</a>
+</nav>
+        <div class="heading">
+            <h1> <i class="fas fa-sticky-note"></i> Your Keep </h1>
+        </div>
+        <div class="btn-div">
+            <button class="learn-more" class="add" id="add">
+            <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Add note</span>
+        </button>
+        </div>
+        
+        
+<script>
+        
+            const addButton = document.querySelector('#add');
+
+            const updateLSData = ()=>{
+               const textareaData = document.querySelectorAll('textarea');
+               const notes = [];
+
+               console.log(textareaData);
+
+               textareaData.forEach((note)=>{
+                return notes.push(note.value);
+            });
+            console.log(notes);
+
+            localStorage.setItem('notes',JSON.stringify(notes));
+            }
+
+        const addNewNote = (text = '') => {
+         
+        const  note = document.createElement('div');
+        
+        note.classList.add("note");
+        
+        const htmlData = `
+        <div class="operation">
+                <button class="edit"><i class="fas fa-edit"></i></button>
+                <button class="delete"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="main ${text ? "":"hidden"}"></div>
+            <textarea class="${text ? "hidden":""}" placeholder="Enter your text"></textarea>  `;
+        
+        note.insertAdjacentHTML('afterbegin' ,htmlData);
+        // console.log(note);
+        
+        const editbutton = note.querySelector('.edit');
+        const delbutton = note.querySelector('.delete');
+        const maindiv = note.querySelector('.main');
+        const textarea = note.querySelector('textarea');
+
+        delbutton.addEventListener('click' ,()=>{
+            note.remove();
+            updateLSData();
+        })
+
+        textarea.value = text;
+        maindiv.innerHTML = text;
+
+        editbutton.addEventListener('click',()=>{
+            maindiv.classList.toggle('hidden');
+            textarea.classList.toggle('hidden');
+        })
+
+        textarea.addEventListener('change',(event)=>{
+           const value = event.target.value;
+           maindiv.innerHTML = value;
+           console.log(value);
+
+           updateLSData();
+        });
+
+        document.body.appendChild(note);
+
+        }
+        const notes = JSON.parse(localStorage.getItem('notes'));
+if(notes){ notes.forEach((note)=> addNewNote(note)) };
+        addButton.addEventListener('click' , () => addNewNote() );
+           
+</script>
+</body>
+</html>

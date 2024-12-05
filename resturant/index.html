@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <a href="home.html"><div class="showloading">
+        <div class="circle"></div>
+    </div></a>
+        
+        <div class="signup">
+            <h1>Login here</h1>
+            <form action="home.html" onsubmit="return mydata()">
+                <br><br><br>
+          <input type="email" placeholder="Enter email here" id="n2">
+
+          <span id="message" style="color: red;"></span>
+          <br><br><br><br><br>
+
+          <input type="password" placeholder="Enter password here" id="n3">
+
+          <span id="message1"  style="color: red;"></span>
+          <br><br><br><br><br>
+
+          <input type="submit" value="Login" id="n1">
+          </form>
+        </div>
+       
+
+        <script>
+            function mydata(){
+
+             var a= document.getElementById('n2').value;
+             var b= document.getElementById('n3').value;
+             
+
+
+             if(a==""){
+                document.getElementById('message').innerHTML="please enter password"
+                
+                
+                
+                return false;
+            }
+            else{
+                
+            }
+
+            
+
+            if(b==""){
+                document.getElementById('message1').innerHTML="please enter your password"
+            
+                return false;
+            }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #000;
+    
+}
+.btn{
+    width: 20%;
+    background: rgba(101, 214, 26, 0.799);
+    height: 45px;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #fff;
+    padding: 5px 15px;
+    box-shadow: 4px 5px 10px black;
+}
+.btn:hover{
+    background: rgba(73, 235, 58, 0.895);
+}
+.hero{
+    width: 50%;
+    height: 85vh;
+    text-align: center;
+    margin-left: 25%;
+    background-color: aqua;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 20px;
+    border-top: 5px solid#ff9797;
+    border-bottom: 5px solid#ff9797 ;
+}
+h1{
+    margin-top: 50px;
+    font-family: sans-serif;
+    color: blue;
+    font-size: 50px;
+    text-shadow: 4px 5px 6px black;
+    font-weight: 400;
+}
+input{
+    font-size: 40px;
+    margin: 30px;
+    padding: 10px 5px;
+    
+    align-self: flex-start;
+    border-radius: 10px;
+    background-image: url(1.jpg);
+    background-size: cover;
+    
+}
+#result-shower{
+    margin-top: 10px;
+    font-size: 50px;
+     color: #f91818;
+
+}
+#res-2{
+    margin-top: 10px;
+    font-size: 50px;
+     color: #000000; 
+     font-family: sans-serif ;
+     font-weight: 200;
+     letter-spacing: 1px;
+}
+.in{
+    display: inline-flex;
+}
+@media (max-width:650px){
+    .hero{
+        height: 70vh;
+        width: 90%;
+        margin-top: 130px;
+        margin-left: 19px;
+        text-align: center;
+    }
+    input{
+        font-size: 26px;
+        margin-left: -10px;
+        height: 45px;
+    }
+    h1{
+        font-size: 25px;
+        margin-left: -12.9px;
+        margin-top: 20px;
+        
+    }
+    #result-shower{
+        font-size: 30px;
+        margin-left: -0px;
+        text-align: center;
+    }
+    #res-2{
+        font-size: 30px;
+        margin-left: -10px;
+    }
+    .btn{
+        width: 200px;
+    }
+
+
+}

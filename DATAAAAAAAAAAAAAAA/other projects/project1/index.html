@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h3>Best jokes to make your day</h3>
+    <div id="joke" class="joke">Awesome joke is loading...</div>
+    <button id="jokeBtn" class="Btn">Next joke</button>
+  </div>
+  <script>
+      const jokes=document.querySelector('#joke');
+      const jokeBtn=document.querySelector('jokeBtn');
+
+const generateJokes=()=>{
+  fetch('https://icanhazdadjoke.com')
+  .then((res)=>{
+  console.log( res.json());
+})
+.catch((error) => {
+    console.log(error);
+})
+}
+
+jokeBtn.addEventListener('click',generateJokes);
+      generateJokes();
+      </script>
+</body>
+</html>

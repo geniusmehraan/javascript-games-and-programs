@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title> tribute </title>
+<style>
+img{
+border-radius:30px;
+}
+body{
+background-color:aqua;
+}
+p{
+color:red;
+input{
+color: red;
+}
+</style>
+</head>
+<body>
+<script>
+       function myfun() 
+	   {
+            var a = document.getElementById("n1").value;
+			
+            if (a == ""{
+                document.getElementById("message").innerHTML="please enter number";
+           return false;
+            }
+			}
+</script>
+<img src="1.jpg" width=40%  /> 
+SHAKIR SAJAD
+<hr>
+
+<img src="2.jpg" width=30% />
+
+<img src="3.jpg"  width=30% />
+<img src="4.jpg" width=30% />
+<hr>
+<p>
+
+my name is shakir sajad. i am 30 years old. i study in class 12th. this is my picture. thanks.
+
+<hr>
+
+<footer>
+<center> <h1> i will contract you </h1> </center>
+<form onsubmit="return myfun()">
+phone number
+<input type="phone number" id="n1"/>
+<span id="message"></span>
+<input type="submit" value="ok" onclick="myfun()"/>
+</form>
+</body>
+bhh
+</html>

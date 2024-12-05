@@ -1,0 +1,7 @@
+result2.innerHTML=res;
+
+  for(i;i>0;i--){
+         res = res*celsuis;
+      
+    }
+      let result2 = document.getElementById('result-shower');

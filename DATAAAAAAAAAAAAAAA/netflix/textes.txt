@@ -1,0 +1,11 @@
+@media (max-width:760px) {
+    nav button{
+        width: 45px;
+        height: 25px;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+    .logo{
+        font-size: 30px;
+    }
+}

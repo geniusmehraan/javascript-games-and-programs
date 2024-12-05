@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(14, 5, 5, 0.918);
+    font-family: sans-serif;
+}
+.nav{
+    margin-left: 996px;
+    margin-top: -16px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+a{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+.active{
+    color: skyblue;
+}
+.active-line:hover{
+    
+    font-size: 18px;
+}
+.heading{
+    display: flex;
+}
+.heading h1{
+    font-size: 35px;
+    color: white;
+    margin-left: 350px;
+    margin-top: 60px;
+    font-weight: 200;
+    border: 2px solid whitesmoke;
+    padding: 6px;
+    letter-spacing: 4px;
+    border-radius: 50px;
+    background-color: violet;
+    box-shadow: 5px 5px 10px #000000e9;
+}
+.main-point{
+    margin-top: 70px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    height: 100vh;
+    border-left: 8px solid rgba(225, 121, 23, 0.953);
+    border-right: 8px solid rgba(225, 121, 23, 0.953);
+    border-bottom: 6px solid rgba(225, 121, 23, 0.953);
+    width: 100%;
+    background-color: beige;
+    overflow-x: scroll;
+    
+}
+.main-point h2{
+   font-size: 28px; 
+   font-family: sans-serif;
+ padding-top: 50px;
+margin-left: 50px;
+
+}
+.feedback{
+    display: inline-flex;
+}
+h3{
+    margin-left: 170px;
+    font-size: 23px;
+    border: 2px solid black;
+    padding: 4px;
+    border-radius: 20px;
+}
+input{
+    font-size: 18px;
+    height: 35px;  
+    width: 250px;
+    margin-top: 30px;
+    margin-left: 25px;                                                                                                                 
+}
+#n1{
+    margin-left: 60px;
+}
+#n3{
+    margin-left: 60px;
+    width: 250px;
+    height: 200px;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    color: black;
+}
+input{
+    border-radius: 10px;
+    padding-left: 5px;
+    margin-left: 60px;
+    font-family: serif;
+    color: black;
+}
+#n5{
+    background-color: rgba(20, 20, 132, 0.858);
+    font-family: sans-serif;
+    cursor: pointer;
+}
+#n4{
+    margin-top: -160px;
+}

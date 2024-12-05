@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght200;400&display=swap");
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+body{
+	background-color:#f4f7f8;
+	font-family:"Poppins",sans-serif;
+	display:flex;
+	flex-wrap:wrap;
+}
+.nav {
+    position:fixed;
+	bottom:0;
+	width:100%;
+	height:55px;
+	box-shadow:0 0 3px rgba(0,0,0,0.8);
+	background-color:white;
+	display:flex;
+	overflow-x:auto;
+}	
+.nav_link {
+	display:flex;
+	flex-grow:1;
+	min-width:50px;
+	overflow:hidden;
+	white-space:nowrap;
+	flex-direction:colums;
+	align-items:center;
+	justify-content:center;
+	font-family:sans-serif;
+	font-size:20px;
+	color:black;
+	text-decoration:none;
+	-webkit-tap-higlight-color:transparent;
+	transition:background-color 0.1s ease-in-out;
+}
+.nav_link:hover {
+	background-color:#eeeeee;
+}
+.nav_link_active {
+	color:#009578;
+}
+.container{
+    background-color: #fff;
+    border-radius: 10px;
+    box-sizing: 0 10px 20px 10px rgba(0,0,0,0.1);
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 100%;
+    width: 800px;
+	
+}
+.heading{
+	width:100vw;
+	height:4.5rem;
+	background-color:gold;
+	color:#282936;
+	box-shadow:0px 10px 16px rgba(248,247,247);
+}
+.heading h1{
+	line-height:4.8rem;
+	margin-left:2.8rem;
+	font-weight:400;
+}
+.add:active{
+	transform:scale(0.98)
+}
+.btn-div{
+	position:fixed;
+	top:6.5rem;
+	right:0;
+	border:none;
+	border-radius:3px;
+	padding:0.5rem 1rem;
+	cursor:pointer;
+}
+button{
+	position:relative;
+	display:inline-block;
+	cursor:pointer;
+	outline:none;
+	border:0;
+	vertical-align:middle;
+	text-decoration:none;
+	background:transparent;
+	padding:0;
+	font-size: inherit;
+	font-family: inherit;
+}
+button.learn-more{
+	width: 11rem;
+	height: auto;
+}
+button.learn-more .circle{
+	transition: all 0.45s cubic-bezier(0.65,0,0.076,1);
+	position:relative ;
+	display: block;
+	margin: 0;
+	width: 3rem;
+	height: 3rem;
+	background: #f1c12e;
+	border-radius: 1.625rem;
+}
+button.learn-more .circle .icon{
+	transition: all 0.45s cubic-bezier(0.65,0,0.076,1);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+}
+button.learn-more .circle .icon.arrow{
+	transition: all 0.45s cubic-bezier(0.65,0,0.076,1);
+	left: 0.625rem;
+	width: 1.125rem;
+	height: 0.125rem;
+	background: none;
+}
+button.learn-more .circle .icon.arrow::before{
+	position: absolute;
+	content: "";
+	top: -0.25rem;
+	right:0.0625rem ;
+	width:0.625rem ;
+	height:0.625rem ;
+	border-top: 0.125rem solid #fff;
+	border-right: 0.125rem solid #fff;
+	transform: rotate(45deg);
+}
+button.learn-more .button-text{
+	transition: all 0.45s cubic-bezier(0.65,0,0.076,1);
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	padding: 0.75rem 0;
+	margin: 0 0 0 1.85rem;
+	color: #282936;
+	font-weight: 700;
+	line-height: 1.6;
+	text-align: center;
+	text-transform: uppercase;
+}
+button:hover .circle{
+	width: 100%;
+}
+button:hover .circle .icon.arrow{
+	background: #fff;
+	transform: translate(1rem 0);
+}
+button:hover .button-text{
+	color: #fff;
+}
+.note{
+	background-color: #fff;
+	margin: 30px 20px;
+	height:150px ;
+	width: 300px;
+	overflow-y: scroll;
+	margin-top: 7rem;
+	box-shadow: inset 1px 1px 0px rgba(0,0,0,0.1),
+	inset 0px -1px 0px rgba(0,0,0,0.1);
+}
+.note .tools{
+	display: flex;
+	justify-self: flex-end;
+	padding: 0.5rem;
+}
+.note .tools button{
+background-color: transparent;
+border: none;
+color: #fff;
+cursor: pointer;
+font-size: 1.2rem;
+margin-left:0.5rem ;
+}
+.note textarea{
+	outline: none;
+	font-family:inherit ;
+	font-size:1.2rem ;
+	border:none ;
+	height:300px ;
+	width:100% ;
+	padding: 40px 0 0 0;
+}
+.fa-edit,
+.fa-trash-alt{
+	color:#fff ;
+	padding-left:30px;
+	background-color:aqua ;
+	border-radius:  50%;
+}
+.fa-trash-alt{
+	background-color: #e74c3c;
+}
+.edit{
+	margin-left: 200px;
+}
+.fa-edit:hover{
+	background-color:#fff;
+	color:#27ae60;
+	filter:drop-shadow(0px 10px 8px rgb(219,218,218));
+}
+.fa-trash-alt:hover{
+	background-color:#fff;
+	color:#e74c3c;
+	filter:drop-shadow(0px 10px 8px rgb(219,218,218));
+}
+.main{
+	padding:20px
+}
+.hidden{
+  display:none;	
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="heading">
+        <h1>contact us by this page</h1>
+        </div>
+    <div class="nav">
+        <a href="home.html" class="active-line">HOME</a> 
+         <a href="order.html" class="active-line">ORDER</a>
+         <a href="contact.html" class="active active-line">CONTACT</a> 
+         <a href="dish.html" class="active-line">DISH</a> 
+        </div>
+        <div class="main-point">
+<pre><h2>Phone number: 9622551975      Call us on this number  <br><br>
+Email: shaw@gmail.com <br><br>
+Location: Srinagar Pampore-Shalina</h2></pre><br><br>
+<div class="feedback">
+    <h3>Put your feedback here</h3><br><br>
+    </div><br>
+    <form onsubmit="return mydata()">
+        <input type="email" placeholder="Enter your email" id="n1">
+        <span id="n2" style="color: red;"></span><br><br>
+        <textarea cols="30"placeholder="Give feedback here" rows="10" id="n3"></textarea>
+        <span id="n4" style="color: red;"></span><br>
+        <input type="submit" onclick="mydata()" id="n5">
+    </form>
+  </div>
+
+
+
+<script>
+function mydata()
+{
+    var a = document.getElementById('n1').value;
+    var b = document.getElementById('n3').value;
+
+    if(a==""){
+        document.getElementById('n2').innerHTML="!plese enter email";
+        
+    
+        return false;
+    }
+    if(b==""){
+        document.getElementById('n4').innerHTML="!please give us your feedback";
+
+        return false;
+    }
+}
+</script>
+</body>
+
+</html>

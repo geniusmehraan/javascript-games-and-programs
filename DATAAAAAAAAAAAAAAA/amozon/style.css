@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    font-family: arial;
+    border: border-box;
+    
+}
+.navbar{
+    height: 60px;
+    width: 100%;
+    background-color: #131921;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.nav-logo{
+    height: 50px;
+    width: 100px;
+}
+.logo{
+    background-image: url(logo.png);
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+}
+.border{
+    border: 1.5px solid transparent;
+}
+.border:hover{
+    border: 1.5px solid white;
+}
+.p2{
+    font-weight: 700;
+}
+
+.add-icon{
+    display: flex;
+    margin-top: 2px;
+    gap: 2px;
+}
+.nav-search{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: orange;
+    width:700px;
+    height:40px;
+    border-radius: 4px;
+    margin-left: 30px;
+}
+.select1{
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+    width: 50px;
+    text-align: center;
+}
+.search1{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+}
+.search-icon{
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #131921;
+}
+.btn1{
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+}
+.para2{
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.nav-search:hover{
+    border: 2px solid orange;
+}
+.signin1 span{
+    font-size: 0.7rem;
+}
+.return span{
+    font-size: 0.7rem;
+}
+.cart i{
+    font-size: 30px;
+}
+.cart{
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+
+.panel{
+    height: 40px;
+    width: 100%;
+    background-color: #222f3d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.panel-ops p{
+    display: inline;
+    margin-left: 10px;
+}
+.panel-ops {
+    width: 70%;
+    font-size: 0.85rem;
+}
+.panel-deals{
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+.hero-section{
+    background-image: url(1.jpg);
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.msg{
+    color: black;
+    background-color: #fff;
+    height: 40px;
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 3px 5px 3px #312f2f85;
+    margin-bottom: 50px;
+    font-size: 0.85rem;
+}
+.shop-section{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(235, 236, 170, 0.781);
+    justify-content: space-evenly;
+}
+.box{
+    height: 400px;
+    width: 23%;
+   background-color: white;
+  margin-bottom: 15px;
+}
+.box h2{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+.box .a1{
+    margin-left: 10px;
+    font-size:14px;
+    color: green;
+    top: 20px;
+    position: relative;
+    text-decoration: none;
+}
+.box-img1{
+    height: 300px;
+    width: 95%;
+    background-size: cover;
+    margin-top: 10px;
+    
+}
+.box-img{
+    height: 300px;
+    width: 95%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+   
+}
+@media (max-width:600px) {
+    .navbar{
+        height:40px;
+        width: 100%;
+        background-color: #131921;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        
+    }
+    .nav-logo{
+        height: 30px;
+        width: 50px;
+    }
+    .logo{
+        background-image: url(logo.png);
+        background-size: cover;
+        
+        height: 30px;
+        width: 100%;
+    }
+    .p2{
+        font-weight: 400;
+        font-size: 5px;
+    }
+    .p1{
+        font-size: 5px;
+    }
+    
+    .add-icon{
+        display: flex;
+        margin-top: 2px;
+        gap: 1px;
+    }
+    #dot{
+        font-size: 5px;
+    }
+
+}

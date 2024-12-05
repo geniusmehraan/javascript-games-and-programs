@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tribute</title>
+    <link rel="stylesheet" href="font.css">
+</head>
+
+<body>
+    <script>
+        function mydata() {
+            var a = document.getElementById("mobilenumber").value;
+            var b = document.getElementById("email").value;
+            var c = document.getElementById("city").value;
+            if (a == "" || b == "" || c == "") {
+                document.getElementById("messages").innerHTML = "please enter number";
+                document.getElementById("messages2").innerHTML = "please enter email";
+                document.getElementById("messages3").innerHTML = "please enter city name";
+                return false;
+            }
+            if (isNaN(a)) {
+                document.getElementById("messages").innerHTML = "please enter a valid number";
+                return false
+            }
+            if (a.length < 10) {
+                document.getElementById("messages").innerHTML = "this is unknown number";
+                return false;
+            }
+            if (a.length > 10) {
+                document.getElementById("messages").innerHTML = "this is unknown number";
+                return false;
+            }
+            if((a.charAt(0)!=9) && (a.charAt(0)!= 8) && (a.charAt(0)!= 7) && (a.charAt(0)!= 6)){
+
+                document.getElementById("messages").innerHTML = "this is not a valid number";
+                return false;
+            }
+
+        }
+    </script>
+    <img src="1.jpg" height="350px" class="img1">
+    <h1 class="text1">SHAKIR SAJAD</h1>
+    <hr>
+    <pre>
+             <img src="2.jpg" height="200px" class="img2" >                       <img src="3.jpg" height="200px" class="img3" >                       <img src="4.jpg" height="200px" class="img4" >
+</pre>
+    <BR>
+    <CENTER>
+        <h1><span class="egf-con">A</span><SPAN class="nar-con">B</SPAN><SPAN class="mar-con">O</SPAN><SPAN
+                class="cer-con">U</SPAN><SPAN class="mpt-con">T</SPAN></h1>
+    </CENTER>
+    <p class="ali-con">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam autem illum dolore veritatis
+        recusandae molestiae quod eos, hic, consequatur porro dolorum! Qui, adipisci. Iste at consequatur beatae,
+        molestiae inventore eos soluta exercitationem accusamus consequuntur, unde quod quasi vero vel sunt, assumenda
+        fugit expedita error quisquam quos. Molestiae provident explicabo nihil magni atque at, omnis temporibus,
+        voluptates, praesentium corrupti amet? Rerum dolore dolor expedita deserunt, qui tempora ex suscipit perferendis
+        sint reprehenderit eligendi, nemo ducimus a distinctio quam facere pariatur voluptatum eaque assumenda
+        laudantium voluptates, modi quae laboriosam explicabo! Illum consequatur inventore ipsum earum sunt provident
+        blanditiis ducimus, repudiandae quos ab!</p>
+    <hr>
+    <footer>
+        <center>
+            <h1>I will contact you</h1>
+        </center>
+        <form onsubmit="return mydata()" action="sucsesful.html">
+            <p class="para3">phone number </p>
+            <input type="mobile number" placeholder="enter your number" id="mobilenumber" value="">
+            <span id="messages" style="color:red"></span><br>
+            <p class="para3">email</p>
+            <input type="email" placeholder="enter your email" id="email">
+            <span id="messages2" style="color:red"></span><BR><BR>
+            <p class="para3">select your city</p>
+            <select name="city" id="city" class="city" type="text">
+                <option value=""></option>
+                <option value="srinagar">srinagar</option>
+                <option value="delhi">delhi</option>
+                <option value="mumbai">mumbai</option>
+            </select>
+            <span id="messages3" style="color:red"></span><br>
+            <footer>
+                <input type="submit" value="OK" onclick="mydata()" class="button"><br>
+        </form>
+    </footer>
+</body>
+
+</html>

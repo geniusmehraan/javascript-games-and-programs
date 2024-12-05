@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- The Extended Copyright/Trademark Language Resides At: http://www.microsoft.com/info/cpyrtInfrg.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-16"/><base target="_blank"/>
+	<style type="text/css">
+		html{overflow:scroll}
+		body{font-size:10pt;font-family:Verdana;color:#000000;background-color:#F0F0F0}
+		.header{overflow:hidden;white-space:nowrap}td{padding-top:0.2em;padding-bottom:0.2em}
+		.searchbox{padding-top:0.2em;font-size:9pt}.button{background-color:#F0F0F0;border-width:1px}
+		.messages{  font-size:9pt;
+					font-family:Arial;
+					background-color:#FFFFFF;
+					border-top-width:medium;
+					border-top-style:solid;
+					border-top-color:#C0C0C0;
+					overflow:hidden;
+					position:relative;
+					width:95%;					
+					}.hilight{background-color:#FFFF40}
+		.sectionHdr{margin-left:0.8em;font-weight:bold} 
+		.sectionExp{font-weight:bold} 
+		.sectionExp2{font-weight:bold;display:none}		
+		.section{margin-left:0.8em} 
+
+		div.t{display:none} 
+		div.f{display:none} 
+		.pointer{   cursor: pointer; 
+					cursor:hand;
+				} 
+		a{text-decoration:none} 
+		div.vbe{display:none}
+
+		a:link{color:#0000FF} 
+		a:visited{color:#0000FF} 
+		a:active{color:#0000FF} 
+		a:hover{color:#0000FF}
+
+		.err{color:#000000;background-color:#FFD0D0;font-weight:bold} 
+		.f{color:#208080} 
+		.wrn{color:#000000;font-weight:bold}
+		.msg{color:#000000} 
+		.ver{color:#808080} 
+		.r{font-size: 120%; font-weight:bolder} 
+
+		div.r{display:inline}
+		div.err{display:inline} 
+		div.wrn{display:inline} 
+		div.msg{display:inline} 
+		div.dbg{display:inline} 
+		div.itn{display:inline} 
+		div.ver{display:none} 
+		div.vbe{display:inline} 
+		div.t{display:inline}  
+		div.f{display:inline} 
+		div.act{display:inline}
+
+		span.t{display:none} 
+		span.f{display:none} 
+		span.r{display:inline}
+	</style>
+	<script type="text/javascript">
+	
+		// This function is used to present the install summary information.
+		function showResult(sClassName, fDisplayResult)
+		{
+			showClass(sClassName, fDisplayResult);
+
+			// Expand all nodes and turn off all classes except result.
+			if (true == fDisplayResult) 
+			{
+				// Uncheck all checkboxes.
+				document.getElementById("errCB").checked = false;
+				document.getElementById("vbeCB").checked = false;
+				document.getElementById("msgCB").checked = false;
+				document.getElementById("tCB").checked = false;
+			 
+				// Hide respective contents.
+				showClass("err",0);
+				showClass("vbe",0);
+				showClass("msg",0);
+				showClass("dbg",0);
+				showClass("itn",0);
+				showClass("t",0);
+				addRule(document.styleSheets[0], "div.sectionHdr", "display:none");	 
+			}
+			else
+			{
+				addRule(document.styleSheets[0], "div.sectionHdr", "display:inline");	 
+			}
+		}
+
+		// This function is the entry for hiding/displaying a class of entries.
+		function showClass(sClassName , fDisplayClass) 
+		{
+			// Need to bring back the sectionHdr because it may potentially be hidden by ShowResult()
+			addRule(document.styleSheets[0], "div.sectionHdr", "display:inline");
+			var type="span";
+			var display="inline";
+			addRule(document.styleSheets[0], type + "." + sClassName, "display:" + ( fDisplayClass ? display : "none" ) );
+			updateSections();
+		}
+		
+		function updateSections() 
+		{
+			var nodeList = document.getElementById("messages").childNodes;
+			var totalNodes = nodeList.length;
+			for (var i = 0; i < totalNodes; i++)
+			{
+				if(nodeList[i].className == "section")
+				{
+					updateSection(nodeList[i]);
+				}
+			}		  
+		}
+		
+		// Display entries based on the status of checkbox
+		function updateSection(node) 
+		{
+			var fFoundVis = false;
+			var nodeList = node.children;
+			var totalNodes = nodeList.length;
+			for (var i = 0; i < totalNodes; i++)
+			{
+				if(nodeList[i].className == "section") 
+				{
+					var fVis = updateSection(nodeList[i]);
+					if (fVis)
+					{ 
+						fFoundVis = true;
+					}
+				} 
+				else 
+				{
+					var checkName = nodeList[i].className + "CB";
+					if (document.getElementById(checkName) && document.getElementById(checkName).checked)
+					{
+						fFoundVis = true;
+					}
+				}	
+			}
+			node.previousSibling.style.display = (fFoundVis ? "block" : "none");
+			return fFoundVis;
+		}
+		
+		function expandAll(fExpand, xLast) 
+		{
+			if (fExpand == 0) 
+			{
+				// If none of the check boxes are checked, meaning we are in summary mode, don't collapse
+				var bChecked = false;
+				bChecked = document.getElementById("errCB").checked || 
+							document.getElementById("vbeCB").checked || 
+							document.getElementById("msgCB").checked ||
+							document.getElementById("tCB").checked ;
+		  
+				if (bChecked == false)
+				{
+					return;
+				}
+			}
+
+			var nodeList = document.getElementsByTagName("*");
+			var last = null;
+
+			var totalNodes = nodeList.length;
+			for (var i = 0; i < totalNodes; i++)
+			{
+				if(nodeList[i].className == "section") 
+				{
+					expand(nodeList[i], fExpand);
+					if (xLast && nodeList[i].parentElement.className == "messages") 
+					{
+						last = nodeList[i];
+					}
+				}
+			}
+				
+			if(last)
+			{ 
+				expand(last, !fExpand);
+			}
+		}
+
+		function toggleSection() 
+		{
+			var node = event.srcElement.parentElement.parentElement.nextSibling;
+			
+			// Handle node being null when we are trying to expand the time span.
+			if (node == null)
+			{
+				node = event.srcElement.parentElement.parentElement.parentElement.nextSibling;
+			}
+			expand(node, node.style.display == "none");			
+		}
+	 
+		function expand(el, fExpand) 
+		{
+			el.style.display = (fExpand ? "block" : "none");
+			el.previousSibling.childNodes[0].childNodes[1].style.display = (fExpand ? "none" : "inline");
+		}
+			 
+		// Abstract the addRule/InsertRule functionality for cross-browser support.
+		function addRule(sheet, sSelector , sRule)
+		{
+			if(sheet.insertRule)
+			{
+				sheet.insertRule(sSelector + "{" + sRule + "}", sheet.cssRules.length);
+			}
+			else if(sheet.addRule)
+			{
+				sheet.addRule(sSelector, sRule);
+			}
+		}		
+	</script>
+</head>
+
+<body onload="expandAll(0,1);updateSections();showResult('r',true)";">
+	<div class="header">
+		<center><h1>Installation Log</h1></center>
+		<table width=100%>
+			<tr>
+				<td>
+					<b>Message Types: </b>
+				</td>
+				<td>
+					<input id="errCB" type="checkbox" onclick="showClass('err',document.getElementById('errCB').checked);"/>
+					<label for="errCB" class="pointer">Errors</label>&nbsp;&nbsp;
+
+					<input id="vbeCB" type="checkbox" onclick="showClass('vbe',document.getElementById('vbeCB').checked);showClass('dbg',document.getElementById('vbeCB').checked)"/>
+					<label for="vbeCB" class="pointer">Verbose</label>&nbsp;&nbsp;
+
+					<input id="msgCB" type="checkbox" onclick="showClass('msg',document.getElementById('msgCB').checked);"/>
+					<label for="msgCB" class="pointer">Messages</label>&nbsp;&nbsp;					
+				</td>
+				<td>
+							
+				</td>
+			</tr>
+			<tr>
+				<td>
+					  <b>Message Details: </b>
+				</td>
+				<td>
+					 <input id="tCB" type="checkbox" onclick="showClass('t',document.getElementById('tCB').checked);"/>
+					 <label for="tCB" class="pointer">Date Time</label>&nbsp;&nbsp;
+				 
+				</td>
+				<td align="right">  
+				   <input type="button" class="button" onclick="showResult('r',true)" value="Summary"/>&nbsp;
+				   <input type="button" class="button" onclick="expandAll(1)" value="Expand All"/>&nbsp;
+				   <input type="button" class="button" onclick="expandAll(0)" value="Collapse All"/>&nbsp;		   
+				</td>
+			</tr>
+		</table>
+	</div>
+	<center><A HREF="http://www.microsoft.com/info/cpyrtInfrg.htm"> &copy; 2009 Microsoft Corporation. All rights reserved. Terms of Use.</A></center>
+	<form action="" id="messages" class="messages" />
+
+<!-- End of header -->
